@@ -44,7 +44,7 @@ Note: When you're done, submit a PR.
 13. What are the two ways to interpolate Ruby in an ERB view template? What's the difference between these two ways?
 * `<% #Invsible Ruby code here %>` or `<%= #Visible Ruby code here %>`. The equal sign after the initial percentage symbol means whatever the result of the code to follow is going to be rendered to the screen and converted/inserted into the HTML document.
 14. What's an ORM?
-* Object Representational Model
+* Object Relational Mapper
 15. What's the most commonly used ORM in ruby (Sinatra & Rails)?
 * ActiveRecord
 16. Let's say we have an application with restaurants. There are seven verb + path combinations necessary to provide full CRUD functionality for our restaurant application. List each of the seven combinations, and explain what each is for.
@@ -110,14 +110,14 @@ activities = {
 How would I add 'granola bar' to things you should have when hiking?
 * `activities[:hiking][:supplies] << 'granola bar'`
 23. What are the 4 Principles of OOP? Give a one sentence explanation of each.
-* Single Responsibility Principle - a method should only do a single thing
-* Proper Encapsulation - Variables should not be exposed outside of methods or classes unless absolutely necessary
-* TDD - Test Driven Development: write failing tests first, then write the code to make them pass
-* Red, Green, Refactor - The cycle of TDD: Red is failing tests, Green is passing tests, Refactor is make better code to make the tests pass
+* Proper Encapsulation - Variables should not be exposed outside of methods or classes by accessors or mutators unless absolutely necessary
+* Data Abstraction - creating models of real things/data that have all the essential characteristics of those real things/data. Breaking things down into the smallest possible step/role/characteristic (aka, single responsibility principle - a method should do only one thing)
+* Polymorphism - 'one name, many forms' - having multiple methods with the same name but slightly different functionality. In this way, a superclass can contain a default method that all of its subclasses inherit, while a particular subclass can override that default method to do something specific to its own class.
+* Inheritance - Objects relate to one another in a 'has a', 'uses a' or 'is a' relationship. Inheritance is the 'is a' one. This allows superclasses to hold more general states and behaviors while classes and modules hold more specific states and behaviors and c more specific.
 
 ### Self Assessment:
 Choose One:
-* I was able to answer every question without relying on outside resources
+* I was able to answer most questions independently, but utilized outside resources for a few
 
 Choose One:
 * I feel confident about the content presented this week

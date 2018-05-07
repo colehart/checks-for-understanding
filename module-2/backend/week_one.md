@@ -57,7 +57,7 @@ Note: When you're done, submit a PR.
 * `put '/restaurants/:id'` edits/updates the existing restuarant in our database according to whatever was put in the form (and redirects to index as long as you code it in the block)
 * `delete '/restaurants/:id'` destroys the current restaurant from our database (and redirects to index as long as you code it  in the block)
 17. What's a migration? 
-* It's when you add or modify a table to/in your database
+* It's when you add a table to your database or modify the structure of an existing table in your database.
 18. When you create a migration, does it automatically modify your database?
 * No, you have to `rake db:migrate` after you `rake db:create_migration NAME='new_migration'`
 19. How does a model relate to a database?

@@ -11,7 +11,7 @@ Note: When you're done, submit a PR.
 * `POST` - Creates new resource
 * `PUT` - Updates an entire new version of a resource
 * `PATCH` - Updates a portion of a resource
-* `DELET`E - Destroys a resource
+* `DELETE` - Destroys a resource
 
 2. What is Sinatra?
 * Sinatra is a server-side web framework that works with Ruby and ActiveRecord in the Model/View/Controller way of organizing a web application, using the MVC style of organizing a server HTTP responsibilites.

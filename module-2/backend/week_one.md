@@ -15,13 +15,13 @@ Note: When you're done, submit a PR.
 
 2. What is Sinatra?
 * Sinatra is a server-side web framework that works with Ruby and ActiveRecord in the Model/View/Controller way of organizing a web application, using the MVC style of organizing a server HTTP responsibilites.
-4. What is MVC?
+3. What is MVC?
 * A Controller receives an HTTP request from a client/browser, communicates any necessary portions of that request to a Model, which may interact with a Database/Databases and send any requested info back to the Controller. The Controller then sends the relevant information to the View(s) to render properly and finally sends the rendered page back to the browser.
-5. Why do we follow conventions when creating our actions/path names in our Sinatra routes?
+4. Why do we follow conventions when creating our actions/path names in our Sinatra routes?
 * It allows for ease of other developers finding information in our app when they come onto a pre-existing project or codebase.
-6. What types of variables are accessible in our view templates without explicitly passing them?
+5. What types of variables are accessible in our view templates without explicitly passing them?
 * Anything in the address bar, anything we've associated in our models/databases via ActiveRecord
-7. Given the following block of code, how would I pass an instance variable `count` with a value of `1` to my `index.erb` template?
+6. Given the following block of code, how would I pass an instance variable `count` with a value of `1` to my `index.erb` template?
   
   ```ruby
   get '/horses' do

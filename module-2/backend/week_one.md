@@ -20,7 +20,7 @@ Note: When you're done, submit a PR.
 4. Why do we follow conventions when creating our actions/path names in our Sinatra routes?
 * It allows for ease of other developers finding information in our app when they come onto a pre-existing project or codebase.
 5. What types of variables are accessible in our view templates without explicitly passing them?
-* Anything in the address bar, anything we've associated in our models/databases via ActiveRecord
+* ~~Anything in the address bar, anything we've associated in our models/databases via ActiveRecord~~ Instance variables
 6. Given the following block of code, how would I pass an instance variable `count` with a value of `1` to my `index.erb` template?
   
   ```ruby
@@ -28,13 +28,14 @@ Note: When you're done, submit a PR.
     @count = 1
     name = 'Mr. Ed'
     @something = something.find(params[:name])
+    or locals: { name = 'Mr. Ed' }
     erb :index
   end
   ```
 8. In the same code block, how would I pass a local variable `name` with a value of `Mr. Ed` to the view?
 * See above. I'm unsure how you could pass any local information from the controller to a view without assigning it somehow to an instance variable for the view to have access to it.
 9. What's the purpose of ERB?
-* Enhanced RuBy allows you to access and manipulate data through Ruby syntax and render it into HTML
+* ~~Enhanced~~ Embedded RuBy allows you to access and manipulate data through Ruby syntax and render it into HTML
 10. Why do I need a development AND test database?
 * You don't want any of your methods or HTML verbs to actually destroy information from your database or modify it while you are refining them. It is also faster to be able to check smaller datasets for whatever capabilities you are creating for your app.
 11. What is CRUD and why is it important?
@@ -44,7 +45,7 @@ Note: When you're done, submit a PR.
 13. What are the two ways to interpolate Ruby in an ERB view template? What's the difference between these two ways?
 * `<% #Invsible Ruby code here %>` or `<%= #Visible Ruby code here %>`. The equal sign after the initial percentage symbol means whatever the result of the code to follow is going to be rendered to the screen and converted/inserted into the HTML document.
 14. What's an ORM?
-* Object Relational Mapper
+* Object Relational Mapper (a way for us to create objects from rows of a database table for easy interaction).
 15. What's the most commonly used ORM in ruby (Sinatra & Rails)?
 * ActiveRecord
 16. Let's say we have an application with restaurants. There are seven verb + path combinations necessary to provide full CRUD functionality for our restaurant application. List each of the seven combinations, and explain what each is for.
@@ -86,11 +87,9 @@ end
 ```
 * I would create a seeds.rb file in the root of the db directory with the following information:
 ```
-csv = File.read('films.csv', headers: true, header_converters: :symbol)
-csv.each do |line|
-  Film.create(id:          line[:id],
-              title:       line[:title],
-              description: line[:description])
+CSV.foreach('films.csv', headers: true, header_converters: :symbol) do |line|
+  film = Film.create(title:       line[:title],
+                     description: line[:description])
 ```
 * Then I would run the migration and seed operations
 ```

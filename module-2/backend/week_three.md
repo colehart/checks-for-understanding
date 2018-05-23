@@ -1,12 +1,5 @@
 ## Week Three Recap
 
-### Instructions
-Fork this repository. Be sure to pull the latest changes to your local repo. Answer the questions to the best of your ability.
-
-Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week.
-
-Note: When you're done, submit a PR with a reflection in the comments about how this exercise went for you.
-
 ### Week 3 Questions
 
 1. What is the entry at the command line to create a new rails app?
@@ -21,8 +14,8 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 > `rake routes` gives you a list/table of the route prefix (usable by Rails as a shorter nickname to access that URI), the associated HTML verb, the URI pattern (which gives information on what variables must be included for any nested resources, and the controller action of that route.
 6. What is an example of a route helper? When would you use them?
 > A route helper is the prefix given for a specific Controller action. You would use them in both:
-  - RSpec feature tests instead of typing out the URI to `visit` or `expect(current_path).to eq(route_helper)`, and
-  - In Controller actions as redirects or Views as a shorthand way to go to another Controller-Action/View.
+>> RSpec feature tests instead of typing out the URI to `visit` or `expect(current_path).to eq(route_helper)`, and
+>> In Controller actions as redirects or Views as a shorthand way to go to another Controller-Action/View.
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
 > `_url` returns the full URI, while `_path` returns the truncated/shorter version.
 8. What are strong params and why are they necessary?
@@ -32,15 +25,13 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 10. How does `form_for` know where to submit the user's input?
 > It takes the parameters supplied directly after `form_for`, either one or multiple in an array in order of nested resources, and submits the user's input through those paths/URI's to the correct table.
 11. Create a form using a `form_for` helper to create a new `Horse`. 
->in .haml
-```
+```haml
 = form_for @horse do|f|
   =f.label :name
   =f.text_field :name
   =f.label :breed
   =f.text_field :breed
   =f.submit
-- end
 ```
 12. Why do we want to validate our models?
 > To ensure that models are not created with/do not contain `nil` values in our database.

@@ -14,8 +14,9 @@
 > `rake routes` gives you a list/table of the route prefix (usable by Rails as a shorter nickname to access that URI), the associated HTML verb, the URI pattern (which gives information on what variables must be included for any nested resources, and the controller action of that route.
 6. What is an example of a route helper? When would you use them?
 > A route helper is the prefix given for a specific Controller action. You would use them in both:
->> RSpec feature tests instead of typing out the URI to `visit` or `expect(current_path).to eq(route_helper)`, and
->> In Controller actions as redirects or Views as a shorthand way to go to another Controller-Action/View.
+>> 1. RSpec feature tests instead of typing out the URI to `visit` or `expect(current_path).to eq(route_helper)`, and
+>>
+>> 2. In Controller actions as redirects or Views as a shorthand way to go to another Controller-Action/View.
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
 > `_url` returns the full URI, while `_path` returns the truncated/shorter version.
 8. What are strong params and why are they necessary?
@@ -25,7 +26,7 @@
 10. How does `form_for` know where to submit the user's input?
 > It takes the parameters supplied directly after `form_for`, either one or multiple in an array in order of nested resources, and submits the user's input through those paths/URI's to the correct table.
 11. Create a form using a `form_for` helper to create a new `Horse`. 
-```haml
+```ruby
 = form_for @horse do|f|
   =f.label :name
   =f.text_field :name

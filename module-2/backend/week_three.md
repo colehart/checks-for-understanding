@@ -14,7 +14,7 @@
 > `rake routes` gives you a list/table of the route prefix (usable by Rails as a shorter nickname to access that URI), the associated HTML verb, the URI pattern (which gives information on what variables must be included for any nested resources, and the controller action of that route.
 6. What is an example of a route helper? When would you use them?
 > A route helper is the prefix given for a specific Controller action. You would use them in both:
-> 1. RSpec feature tests instead of typing out the URI to `visit` or `expect(current_path).to eq(route_helper)`, and
+> 1. RSpec feature tests instead of typing out the URI to `visit` or `expect(current_path).to eq(route_helper)`
 >
 > 2. In Controller actions as redirects or Views as a shorthand way to go to another Controller-Action/View.
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
